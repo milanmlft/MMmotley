@@ -16,3 +16,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 URL: https://github.com/milanmlft/MMmotley
 BugReports: https://github.com/milanmlft/MMmotley/issues
+Imports: 
+    ggplot2
