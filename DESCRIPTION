@@ -1,5 +1,5 @@
 Package: MMmotley
-Title: What the Package Does (One Line, Title Case)
+Title: A motley collection of R functions for data analysis
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Milan",
@@ -7,9 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "milan.malfait94@gmail.com",
            comment = c(ORCID = "0000-0001-9144-3701"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: This package contains a collection of R functions to make some
+		common data analysis tasks a little easier.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
