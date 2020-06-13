@@ -20,4 +20,5 @@ Imports:
     ggplot2
 Suggests: 
     testthat,
-    vdiffr
+    vdiffr,
+    covr
