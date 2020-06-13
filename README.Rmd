@@ -1,0 +1,37 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# MMmotley
+
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/milanmlft/MMmotley/branch/master/graph/badge.svg)](https://codecov.io/gh/milanmlft/MMmotley?branch=master)
+<!-- badges: end -->
+
+This package contains various, not necessarily related, functions to make some data analysis tasks a little easier.
+
+Why "motley"? Because "misc" or "miscellaneous" is already used [too often](https://github.com/search?q=misc+language%3AR&type=Repositories), so I went looking for a [synonym](https://www.lexico.com/synonym/miscellaneous).
+
+## Installation
+
+You can install MMmotley from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("milanmlft/MMmotley")
+```
+
+<!-- ## Contents -->
+
+<!-- List functions contained in package and some usage examples -->
