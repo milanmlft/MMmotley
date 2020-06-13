@@ -7,6 +7,8 @@
 
 [![Codecov test
 coverage](https://codecov.io/gh/milanmlft/MMmotley/branch/master/graph/badge.svg)](https://codecov.io/gh/milanmlft/MMmotley?branch=master)
+[![R build
+status](https://github.com/milanmlft/MMmotley/workflows/R-CMD-check/badge.svg)](https://github.com/milanmlft/MMmotley/actions)
 <!-- badges: end -->
 
 This package contains various, not necessarily related, functions to
