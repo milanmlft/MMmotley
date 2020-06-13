@@ -19,6 +19,9 @@ often](https://github.com/search?q=misc+language%3AR&type=Repositories),
 so I went looking for a
 [synonym](https://www.lexico.com/synonym/miscellaneous).
 
+Also, this is more like an enducational sandbox for myself to learn more
+about R package development and everything related to that.
+
 ## Installation
 
 You can install MMmotley from [GitHub](https://github.com/) with:
