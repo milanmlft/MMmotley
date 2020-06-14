@@ -7,7 +7,7 @@
 gg_pval_hist(p_values)
 }
 \arguments{
-\item{p_values}{vector of p-values.}
+\item{p_values}{Vector of p-values.}
 }
 \value{
 A ggplot object.

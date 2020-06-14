@@ -12,7 +12,7 @@
 #' so that the height of the first bar represents the number of p-values lying
 #' between 0 and 0.05, i.e. the number of cases that would be deemed significant.
 #'
-#' @param p_values vector of p-values.
+#' @param p_values Vector of p-values.
 #'
 #' @return A ggplot object.
 #'
