@@ -1,6 +1,13 @@
 test_that("gg_pval_hist() fails for impossible p-values", {
 	expect_error(gg_pval_hist(c(-0.1, runif(10))))
 	expect_error(gg_pval_hist(c(1.1, runif(10))))
+	expect_error(gg_pval_hist(c(NA, runif(10))))
+})
+
+test_that("gg_pval_hist() fails for input types other than numeric", {
+	expect_error(gg_pval_hist(character(10)))
+	expect_error(gg_pval_hist(integer(10)))
+	expect_error(gg_pval_hist(logical(10)))
 })
 
 test_that("Output of gg_pval_hist() is stable", {

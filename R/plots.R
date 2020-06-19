@@ -30,8 +30,11 @@ gg_pval_hist <- function(p_values) {
       call. = FALSE
     )
   }
+  if (any(is.na(p_values))) {
+    stop("`p_values` contains missing values", call. = FALSE)
+  }
   if (any(p_values < 0) || any(p_values > 1)) {
-    stop("`p_values` should be between 0 and 1.")
+    stop("`p_values` should be between 0 and 1.", call. = FALSE)
   }
 
   ggplot(mapping = aes(x = p_values)) +
