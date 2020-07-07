@@ -18,3 +18,8 @@ A character vector of \code{length(x)}.
 This is a simple wrapper around \code{\link[scales:label_percent]{scales::label_percent()}} to convert numeric
 input to percentages and return them as characters.
 }
+\examples{
+x <- seq(0, 1, length.out = 5)
+format_percentage(x)
+
+}

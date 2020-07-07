@@ -10,6 +10,9 @@
 #' @export
 #'
 #' @examples
+#' x <- seq(0, 1, length.out = 5)
+#' format_percentage(x)
+#'
 format_percentage <- function(x, ...) {
 	labeller <- scales::label_percent(...)
 	labeller(x)
