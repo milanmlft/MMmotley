@@ -24,7 +24,8 @@ about R package development and everything related to that.
 
 ## Installation
 
-You can install MMmotley from [GitHub](https://github.com/) with:
+You can install MMmotley from
+[GitHub](https://github.com/milanmlft/MMmotley) with:
 
 ``` r
 # install.packages("devtools")

@@ -14,6 +14,6 @@
 #' format_percentage(x)
 #'
 format_percentage <- function(x, ...) {
-	labeller <- scales::label_percent(...)
-	labeller(x)
+  labeller <- scales::label_percent(...)
+  labeller(x)
 }

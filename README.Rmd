@@ -29,7 +29,7 @@ Also, this is more like an enducational sandbox for myself to learn more about R
 
 ## Installation
 
-You can install MMmotley from [GitHub](https://github.com/) with:
+You can install MMmotley from [GitHub](https://github.com/milanmlft/MMmotley) with:
 
 ``` r
 # install.packages("devtools")

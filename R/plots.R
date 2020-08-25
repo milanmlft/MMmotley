@@ -42,9 +42,9 @@ gg_pval_hist <- function(p_values) {
       fill = "grey65", col = "black",
       binwidth = 0.05, boundary = 0
     ) +
-  	# Sets x-axis ticks at intervals of 0.1
+    # Sets x-axis ticks at intervals of 0.1
     ggplot2::scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
-  	# Lets the bottoms of the histogram bars touch the x-axis
+    # Lets the bottoms of the histogram bars touch the x-axis
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0, 0.05)))
 }
 
@@ -63,7 +63,7 @@ gg_pval_hist <- function(p_values) {
 #'
 #'   # Generate list of plots
 #'   mtcars_split <- split(mtcars, mtcars$cyl)
-#'   plot_list <- lapply(mtcars_split, function(d){
+#'   plot_list <- lapply(mtcars_split, function(d) {
 #'     ggplot(d, aes(mpg, wt)) +
 #'       geom_point()
 #'   })
