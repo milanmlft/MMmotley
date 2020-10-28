@@ -21,16 +21,13 @@ Takes a list of plots and exports them to a single PDF with one plot per page.
 
   # Generate list of plots
   mtcars_split <- split(mtcars, mtcars$cyl)
-  plot_list <- lapply(mtcars_split, function(d){
+  plot_list <- lapply(mtcars_split, function(d) {
     ggplot(d, aes(mpg, wt)) +
       geom_point()
   })
 
   # Save plots
-  save_plots(plot_list, "test.pdf")
-
-  # Delete file with `base::unlink()`
-  unlink("test.pdf")
+  save_plots(plot_list, "plots.pdf")
 }
 
 }

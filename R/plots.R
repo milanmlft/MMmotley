@@ -73,10 +73,7 @@ gg_pval_hist <- function(p_values, binwidth = 0.05) {
 #'   })
 #'
 #'   # Save plots
-#'   save_plots(plot_list, "test.pdf")
-#'
-#'   # Delete file with `base::unlink()`
-#'   unlink("test.pdf")
+#'   save_plots(plot_list, "plots.pdf")
 #' }
 #'
 #' @export
