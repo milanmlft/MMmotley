@@ -4,10 +4,15 @@
 \alias{gg_pval_hist}
 \title{Create p-value histogram}
 \usage{
-gg_pval_hist(p_values)
+gg_pval_hist(p_values, binwidth = 0.05)
 }
 \arguments{
 \item{p_values}{Vector of p-values.}
+
+\item{binwidth}{Binwidth of the histogram. A sensible choice is to use the
+significance cut-off so that the height of the first bar
+corresponds to the number of significant cases.
+Default: 0.05.}
 }
 \value{
 A ggplot object.

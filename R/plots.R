@@ -13,6 +13,10 @@
 #' between 0 and 0.05, i.e. the number of cases that would be deemed significant.
 #'
 #' @param p_values Vector of p-values.
+#' @param binwidth Binwidth of the histogram. A sensible choice is to use the
+#'                 significance cut-off so that the height of the first bar
+#'                 corresponds to the number of significant cases.
+#'                 Default: 0.05.
 #'
 #' @return A ggplot object.
 #'
@@ -22,7 +26,7 @@
 #'
 #' @export
 #' @importFrom ggplot2 ggplot aes
-gg_pval_hist <- function(p_values) {
+gg_pval_hist <- function(p_values, binwidth = 0.05) {
   # Check input
   if (!is.double(p_values)) {
     stop("`p_values` must be a numeric vector:\n",
@@ -40,7 +44,7 @@ gg_pval_hist <- function(p_values) {
   ggplot(mapping = aes(x = p_values)) +
     ggplot2::geom_histogram(
       fill = "grey65", col = "black",
-      binwidth = 0.05, boundary = 0
+      binwidth = binwidth, boundary = 0
     ) +
     # Sets x-axis ticks at intervals of 0.1
     ggplot2::scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
