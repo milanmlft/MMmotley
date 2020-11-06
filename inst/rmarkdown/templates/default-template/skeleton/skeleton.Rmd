@@ -1,0 +1,48 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "Milan Malfait"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+    df_print: paged
+    number_sections: false
+    code_folding: "show"
+---
+
+```{r setup, include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center"
+)
+```
+
+***
+
+<!-- Use `here` package to specify file paths, see https://rstats.wtf/safe-paths.html -->
+
+```{r libraries, message=FALSE, warning=FALSE, cache=FALSE}
+library(here)
+library(tidyverse)
+theme_set(theme_light())
+```
+
+# Introduction
+
+# Session info {-}
+
+<details><summary>Session info</summary>
+
+```{r session_info, echo=FALSE, cache=FALSE}
+Sys.time()
+git2r::repository()
+sessioninfo::session_info()
+```
+
+</details>
