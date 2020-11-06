@@ -27,24 +27,32 @@ about R package development and everything related to that.
 You can install MMmotley from
 [GitHub](https://github.com/milanmlft/MMmotley) with:
 
-    # install.packages("devtools")
-    devtools::install_github("milanmlft/MMmotley")
+``` r
+# install.packages("devtools")
+devtools::install_github("milanmlft/MMmotley")
+```
 
 ## Contents
 
-    library(MMmotley)
+``` r
+library(MMmotley)
+```
 
 ### `gg_pval_hist`: ggplot2-based p-value histograms with better default layout
 
-    ## Generate some random uniform p-values
-    p_values <- runif(1000)
+``` r
+## Generate some random uniform p-values
+p_values <- runif(1000)
+```
 
 By default, `ggplot2::geom_histogram()` centers the first and last bins
 of the histogram on the x-axis lower and upper limits, respectively.
 
-    library(ggplot2)
-    ggplot(mapping = aes(x = p_values)) +
-      geom_histogram(binwidth = 0.05)
+``` r
+library(ggplot2)
+ggplot(mapping = aes(x = p_values)) +
+  geom_histogram(binwidth = 0.05)
+```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
@@ -56,8 +64,10 @@ cut-off for significance, so that the height of the first bar represents
 the number of p-values lying between 0 and 0.05, i.e. the number of
 cases that would be deemed significant.
 
-    p <- gg_pval_hist(p_values, binwidth = 0.05)
-    p
+``` r
+p <- gg_pval_hist(p_values, binwidth = 0.05)
+p
+```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
@@ -66,22 +76,35 @@ cases that would be deemed significant.
 This is a convenience function if you have a list of plots and want to
 save them to a PDF file with each plot ending up on its own page.
 
-    # Generate list of plots
-    mtcars_split <- split(mtcars, mtcars$cyl)
-    plot_list <- lapply(mtcars_split, function(d) {
-      ggplot(d, aes(mpg, wt)) +
-        geom_point()
-    })
+``` r
+# Generate list of plots
+mtcars_split <- split(mtcars, mtcars$cyl)
+plot_list <- lapply(mtcars_split, function(d) {
+  ggplot(d, aes(mpg, wt)) +
+    geom_point()
+})
 
-    # Save plots
-    file <- tempfile()
-    save_plots(plot_list, file)
+# Save plots
+file <- tempfile()
+save_plots(plot_list, file)
+```
 
 ### `format_percentage`: Format numbers as percentages
 
 This is a simple wrapper around `scales::label_percent()` to convert
 numeric input to percentages and return them as characters.
 
-    x <- seq(0, 1, by = 0.25)
-    format_percentage(x)
-    #> [1] "0%"   "25%"  "50%"  "75%"  "100%"
+``` r
+x <- seq(0, 1, by = 0.25)
+format_percentage(x)
+#> [1] "0%"   "25%"  "50%"  "75%"  "100%"
+```
+
+### RMarkdown templates
+
+This package also contains 2 [templates for
+RMarkdown](https://bookdown.org/yihui/rmarkdown/document-templates.html):
+
+-   Default template: default analysis template
+-   Rmd presentation template: template for RMarkdown presentation in
+    *ioslides* format

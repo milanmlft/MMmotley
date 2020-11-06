@@ -98,3 +98,12 @@ This is a simple wrapper around `scales::label_percent()` to convert numeric inp
 x <- seq(0, 1, by = 0.25)
 format_percentage(x)
 ```
+
+### RMarkdown templates
+
+This package also contains 2 [templates for RMarkdown][rmd-templates]:
+
+- Default template: default analysis template
+- Rmd presentation template: template for RMarkdown presentation in *ioslides* format
+
+[rmd-templates]: https://bookdown.org/yihui/rmarkdown/document-templates.html
