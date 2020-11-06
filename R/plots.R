@@ -53,6 +53,16 @@ gg_pval_hist <- function(p_values, binwidth = 0.05) {
 }
 
 
+geom_pval_hist <- function(mapping = NULL, ..., binwidth = 0.05) {
+  geom_histogram(
+    mapping = mapping,
+    ...,
+    binwidth = binwidth,
+    boundary = 0
+  )
+}
+
+
 #' Save multiple plots to a single PDF
 #'
 #' Takes a list of plots and exports them to a single PDF with one plot per page.
