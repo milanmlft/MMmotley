@@ -25,7 +25,7 @@
 #' gg_pval_hist(pvals)
 #'
 #' @export
-#' @importFrom ggplot2 ggplot aes
+#' @importFrom ggplot2 ggplot aes geom_histogram scale_x_continuous scale_y_continuous expansion
 gg_pval_hist <- function(p_values, binwidth = 0.05) {
   # Check input
   if (!is.double(p_values)) {
@@ -42,14 +42,14 @@ gg_pval_hist <- function(p_values, binwidth = 0.05) {
   }
 
   ggplot(mapping = aes(x = p_values)) +
-    ggplot2::geom_histogram(
+    geom_histogram(
       fill = "grey65", col = "black",
       binwidth = binwidth, boundary = 0
     ) +
     # Sets x-axis ticks at intervals of 0.1
-    ggplot2::scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
+    scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
     # Lets the bottoms of the histogram bars touch the x-axis
-    ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0, 0.05)))
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)))
 }
 
 
