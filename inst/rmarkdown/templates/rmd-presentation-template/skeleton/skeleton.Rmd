@@ -1,0 +1,62 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "Milan Malfait"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  ioslides_presentation:
+    widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.width = 9,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center"
+)
+```
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(tidyverse)
+theme_set(theme_minimal())
+```
+
+<!-- See https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html for usage of ioslides -->
+
+<!-- Section header slide -->
+# Introduction
+
+---
+<!-- By default, new slides start with new section headers, but can also be introduced by inserting "***" or "---" -->
+
+Slide without title
+
+
+<!-- Slide with title -->
+## Slide title
+
+* Bullet point 1
+* Bullet point 2
+
+<!-- Adding presenter notes -->
+<div class="notes">
+This is my *note*.
+
+- It can contain markdown
+- like this list
+</div>
+
+--- 
+
+$\LaTeX$ equations also work
+
+$$e = mc^2$$
+
+
+## Incremental build {.build}
+
+1. Step 1
+2. Step 2
+3. Step 3
