@@ -42,9 +42,9 @@ gg_pval_hist <- function(p_values, binwidth = 0.05) {
   }
 
   ggplot(mapping = aes(x = p_values)) +
-    geom_histogram(
+    geom_pval_hist(
       fill = "grey65", col = "black",
-      binwidth = binwidth, boundary = 0
+      binwidth = binwidth
     ) +
     # Sets x-axis ticks at intervals of 0.1
     scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
