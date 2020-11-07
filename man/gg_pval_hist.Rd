@@ -2,9 +2,12 @@
 % Please edit documentation in R/plots.R
 \name{gg_pval_hist}
 \alias{gg_pval_hist}
+\alias{geom_pval_hist}
 \title{Create p-value histogram}
 \usage{
 gg_pval_hist(p_values, binwidth = 0.05)
+
+geom_pval_hist(mapping = NULL, ..., binwidth = 0.05)
 }
 \arguments{
 \item{p_values}{Vector of p-values.}
@@ -13,6 +16,50 @@ gg_pval_hist(p_values, binwidth = 0.05)
 significance cut-off so that the height of the first bar
 corresponds to the number of significant cases.
 Default: 0.05.}
+
+\item{mapping}{Set of aesthetic mappings created by \code{\link[ggplot2:aes]{aes()}} or
+\code{\link[ggplot2:aes_]{aes_()}}. If specified and \code{inherit.aes = TRUE} (the
+default), it is combined with the default mapping at the top level of the
+plot. You must supply \code{mapping} if there is no plot mapping.}
+
+\item{...}{
+  Arguments passed on to \code{\link[ggplot2:geom_histogram]{ggplot2::geom_histogram}}
+  \describe{
+    \item{\code{data}}{The data to be displayed in this layer. There are three
+options:
+
+If \code{NULL}, the default, the data is inherited from the plot
+data as specified in the call to \code{\link[ggplot2:ggplot]{ggplot()}}.
+
+A \code{data.frame}, or other object, will override the plot
+data. All objects will be fortified to produce a data frame. See
+\code{\link[ggplot2:fortify]{fortify()}} for which variables will be created.
+
+A \code{function} will be called with a single argument,
+the plot data. The return value must be a \code{data.frame}, and
+will be used as the layer data. A \code{function} can be created
+from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
+    \item{\code{position}}{Position adjustment, either as a string, or the result of
+a call to a position adjustment function.}
+    \item{\code{na.rm}}{If \code{FALSE}, the default, missing values are removed with
+a warning. If \code{TRUE}, missing values are silently removed.}
+    \item{\code{show.legend}}{logical. Should this layer be included in the legends?
+\code{NA}, the default, includes if any aesthetics are mapped.
+\code{FALSE} never includes, and \code{TRUE} always includes.
+It can also be a named logical vector to finely select the aesthetics to
+display.}
+    \item{\code{inherit.aes}}{If \code{FALSE}, overrides the default aesthetics,
+rather than combining with them. This is most useful for helper functions
+that define both data and aesthetics and shouldn't inherit behaviour from
+the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
+    \item{\code{bins}}{Number of bins. Overridden by \code{binwidth}. Defaults to 30.}
+    \item{\code{orientation}}{The orientation of the layer. The default (\code{NA})
+automatically determines the orientation from the aesthetic mapping. In the
+rare event that this fails it can be given explicitly by setting \code{orientation}
+to either \code{"x"} or \code{"y"}. See the \emph{Orientation} section for more detail.}
+    \item{\code{stat}}{Use to override the default connection between
+\code{geom_histogram()}/\code{geom_freqpoly()} and \code{stat_bin()}.}
+  }}
 }
 \value{
 A ggplot object.
@@ -33,5 +80,10 @@ between 0 and 0.05, i.e. the number of cases that would be deemed significant.
 \examples{
 pvals <- runif(n = 1000, min = 0, max = 1)
 gg_pval_hist(pvals)
+
+## Using a data.frame in combination with `ggplot`
+library(ggplot2)
+df <- data.frame(pvalue = runif(1000))
+ggplot(df, aes(pvalue)) + geom_pval_hist()
 
 }

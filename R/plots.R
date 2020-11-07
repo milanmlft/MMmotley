@@ -53,6 +53,19 @@ gg_pval_hist <- function(p_values, binwidth = 0.05) {
 }
 
 
+#' @inheritParams ggplot2::geom_histogram
+#' @inheritDotParams ggplot2::geom_histogram -mapping
+#'
+#' @rdname gg_pval_hist
+#'
+#' @examples
+#' ## Using a data.frame in combination with `ggplot`
+#' library(ggplot2)
+#' df <- data.frame(pvalue = runif(1000))
+#' ggplot(df, aes(pvalue)) + geom_pval_hist()
+#'
+#' @export
+#' @importFrom ggplot2 geom_histogram
 geom_pval_hist <- function(mapping = NULL, ..., binwidth = 0.05) {
   geom_histogram(
     mapping = mapping,
