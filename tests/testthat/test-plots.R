@@ -14,8 +14,16 @@ test_that("Output of gg_pval_hist() is stable", {
   # Create synthetic p-values, includes the value 0, so first bin [0, 0.05] will
   # contain 6 values, while all others will contain 5
   pvals <- seq(0, 1, by = 0.01)
-  vdiffr::expect_doppelganger("p-value histogram", gg_pval_hist(pvals),
-  														path = "")
+  vdiffr::expect_doppelganger("gg_pval_hist", gg_pval_hist(pvals), path = "")
+})
+
+test_that("Output of geom_pval_hist() is stable", {
+  df <- data.frame(pval = seq(0, 1, by = 0.01))
+  p <- ggplot2::ggplot(df, aes(pval)) +
+    geom_pval_hist(fill = "grey65", col = "black") +
+    scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)))
+  vdiffr::expect_doppelganger("geom_pval_hist", p, path = "")
 })
 
 test_that("save_plots() creates PDF", {
