@@ -25,12 +25,3 @@ test_that("Output of geom_pval_hist() is stable", {
     scale_y_continuous(expand = expansion(mult = c(0, 0.05)))
   vdiffr::expect_doppelganger("geom_pval_hist", p, path = "")
 })
-
-test_that("save_plots() creates PDF", {
-	plot_list <- lapply(1:3, function(x) ggplot())
-	file_name <- "test-save_plots.pdf"
-	save_plots(plot_list, file_name)
-	expect_true(file.exists(file_name))
-	expect_equal(file.size(file_name), 4601)
-	unlink(file_name)
-})
