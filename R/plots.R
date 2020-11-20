@@ -76,30 +76,6 @@ geom_pval_hist <- function(mapping = NULL, ..., binwidth = 0.05) {
 }
 
 
-
-#' WIP: annotating ggplots with prop. of zeros
-#'
-#' @param mapping
-#' @param ...
-#'
-#' @return
-#' @export
-#'
-#' @examples
-geom_propzero <- function(mapping = NULL, ...) {
-  prop_zero <- data %>%
-    group_by(group) %>%
-    summarise(prop = mean(y == 0))
-
-  geom_text(
-    data = prop_zero,
-    aes(group, 0, label = paste("Prop. zero:", format_percentage(prop))),
-    col = "black"
-  )
-}
-
-
-
 #' Save multiple plots to a single PDF
 #'
 #' Takes a list of plots and exports them to a single PDF with one plot per page.
