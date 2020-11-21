@@ -18,7 +18,8 @@ URL: https://github.com/milanmlft/MMmotley
 BugReports: https://github.com/milanmlft/MMmotley/issues
 Imports: 
     ggplot2,
-    scales
+    scales,
+    dplyr
 Suggests: 
     testthat,
     vdiffr,
