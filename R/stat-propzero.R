@@ -1,12 +1,13 @@
-#' WIP: annotating ggplots with prop. of zeros
+#' Annotating ggplots with prop. of zeros
 #'
-#' @param mapping
-#' @param ...
+#' @inheritParams ggplot2::stat_identity
+#' @section Computed variables:
+#' `stat_propzero()` provides the following variables:
+#' \describe{
+#'   \item{propzero}{proportion of zeros}
+#' }
 #'
-#' @return
 #' @export
-#'
-#' @examples
 stat_propzero <- function(mapping = NULL, data = NULL, geom = "text",
                           position = "identity", na.rm = FALSE,
                           show.legend = NA, inherit.aes = TRUE, ...) {
