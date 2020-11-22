@@ -9,13 +9,12 @@
 #' @examples
 stat_propzero <- function(mapping = NULL, data = NULL, geom = "text",
                           position = "identity", na.rm = FALSE,
-                          inherit.aes = TRUE,
-                          ...) {
+                          show.legend = NA, inherit.aes = TRUE, ...) {
   # TODO: replace `layer` with `annotate`?
   # Might allow more flexible positioning of text annotation
   ggplot2::layer(
     stat = StatPropZero, data = data, mapping = mapping, geom = geom,
-    position = position, inherit.aes = inherit.aes,
+    position = position, show.legend = show.legend, inherit.aes = inherit.aes,
     params = list(na.rm = na.rm, ...)
   )
 }
