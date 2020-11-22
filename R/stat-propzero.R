@@ -24,9 +24,11 @@ stat_propzero <- function(mapping = NULL, data = NULL, geom = "text",
 # ggproto object for stat_propzero
 StatPropZero <- ggplot2::ggproto("StatPropZero", ggplot2::Stat,
   required_aes = c("x", "y"),
+  default_aes = aes(label = stat(propzero)),
+
   compute_group = function(data, scales) {
     grouped <- dplyr::group_by(data, x)
-    prop_zero <- dplyr::summarise(grouped, label = mean(y == 0))
-    data.frame(x = prop_zero$x, y = 0, label = prop_zero$label)
+    out <- dplyr::summarise(grouped, propzero = mean(y == 0))
+    data.frame(x = out$x, y = 0, propzero = out$propzero)
   }
 )
