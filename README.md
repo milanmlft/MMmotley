@@ -36,6 +36,7 @@ devtools::install_github("milanmlft/MMmotley")
 
 ``` r
 library(MMmotley)
+library(ggplot2)
 ```
 
 ### `gg_pval_hist`: ggplot2-based p-value histograms with better default layout
@@ -49,7 +50,6 @@ By default, `ggplot2::geom_histogram()` centers the first and last bins
 of the histogram on the x-axis lower and upper limits, respectively.
 
 ``` r
-library(ggplot2)
 ggplot(mapping = aes(x = p_values)) +
   geom_histogram(binwidth = 0.05)
 ```
@@ -99,6 +99,25 @@ x <- seq(0, 1, by = 0.25)
 format_percentage(x)
 #> [1] "0%"   "25%"  "50%"  "75%"  "100%"
 ```
+
+### `stat_propzero`: Summarise proportion of zeros
+
+Annotate ggplots with the proportion of zeroes in `y` for each `x`.
+
+``` r
+## Generate some random zero-inflated data
+set.seed(42)
+n <- 100
+p <- 0.123
+y <- ifelse(rbinom(n, size = 1, prob = p) > 0, 0, rpois(n, lambda = 2))
+df <- data.frame(x = rep(c("A", "B"), each = n / 2), y = y)
+
+## Make plot
+p <- ggplot(df, aes(x, y)) + geom_jitter(alpha = 0.2, width = 0.1)
+p + stat_propzero(fontface = "bold", col = "dodgerblue")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ### RMarkdown templates
 
