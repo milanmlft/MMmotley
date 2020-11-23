@@ -1,4 +1,7 @@
-#' Annotating ggplots with prop. of zeros
+#' Summarise proportion of zeros in `y` at each `x`
+#'
+#' `stat_propzero()` calculates the proportion of zeros in `y` for each unique
+#' `x` and uses `geom_text()` by default to add annotations to the plot.
 #'
 #' @inheritParams ggplot2::stat_count
 #' @param format.fun Function to format labels when using `geom = "text"` (the

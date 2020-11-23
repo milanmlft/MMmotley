@@ -2,7 +2,7 @@
 % Please edit documentation in R/stat-propzero.R
 \name{stat_propzero}
 \alias{stat_propzero}
-\title{Annotating ggplots with prop. of zeros}
+\title{Summarise proportion of zeros in \code{y} at each \code{x}}
 \usage{
 stat_propzero(
   mapping = NULL,
@@ -67,7 +67,8 @@ default) to depict the proportion of zeros.
 By default, uses \code{\link[scales:label_percent]{scales::label_percent()}}.}
 }
 \description{
-Annotating ggplots with prop. of zeros
+\code{stat_propzero()} calculates the proportion of zeros in \code{y} for each unique
+\code{x} and uses \code{geom_text()} by default to add annotations to the plot.
 }
 \section{Computed variables}{
 
