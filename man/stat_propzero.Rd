@@ -12,7 +12,8 @@ stat_propzero(
   na.rm = FALSE,
   show.legend = NA,
   inherit.aes = TRUE,
-  ...
+  ...,
+  format.fun = scales::label_percent()
 )
 }
 \arguments{
@@ -60,6 +61,10 @@ the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
+
+\item{format.fun}{Function to format labels when using \code{geom = "text"} (the
+default) to depict the proportion of zeros.
+By default, uses \code{\link[scales:label_percent]{scales::label_percent()}}.}
 }
 \description{
 Annotating ggplots with prop. of zeros
