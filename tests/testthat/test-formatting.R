@@ -4,3 +4,5 @@ test_that("Output of format_percentage() is correct", {
 	expect_true(is.character(p))
 	expect_equal(length(p), length(x))
 })
+
+# TODO: add tests for `format_cols`

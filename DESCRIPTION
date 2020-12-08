@@ -23,4 +23,5 @@ Imports:
 Suggests: 
     testthat,
     vdiffr,
-    covr
+    covr,
+    tibble
