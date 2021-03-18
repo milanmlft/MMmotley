@@ -24,4 +24,6 @@ Suggests:
     testthat,
     vdiffr,
     covr,
-    tibble
+    tibble,
+    xaringan,
+    xaringanthemer
