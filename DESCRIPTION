@@ -1,6 +1,6 @@
 Package: MMmotley
 Title: A motley collection of R functions for data analysis
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Milan",
            family = "Malfait",
