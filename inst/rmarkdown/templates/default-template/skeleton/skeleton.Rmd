@@ -5,7 +5,8 @@ author: "Milan Malfait"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
   html_document:
-    theme: cosmo
+    theme: flatly # use darkly for dark version
+    highlight: tango
     toc: yes
     toc_float: yes
     df_print: paged
@@ -19,7 +20,9 @@ knitr::opts_chunk$set(
   fig.width = 6,
   fig.asp = 0.618,
   out.width = "100%",
-  fig.align = "center"
+  fig.align = "center",
+  collapse = TRUE,
+  comment = "#>"
 )
 ```
 
