@@ -1,0 +1,35 @@
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs} % For prettier tables
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+\urlstyle{same}
+
+\setmainfont{Times New Roman}
+
+% set page format
+\geometry{a4paper, bmargin=20mm, tmargin=20mm}
+
+% disable section numbering
+\setcounter{secnumdepth}{0}
+
+% paragraph formatting
+\setlength{\parindent}{0pt} % no indentation of paragraph
+\setlength{\parskip}{6pt} % add blank space before paragraph
+
+% format page numbering and header and footer space
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Milan Malfait}
+\lhead{Left header}
+\rfoot{\thepage}
+\setlength{\headheight}{15pt}
+
+% ------------------------------ End of preamble ------------------------------

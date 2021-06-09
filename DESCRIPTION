@@ -26,4 +26,5 @@ Suggests:
     covr,
     tibble,
     xaringan,
-    xaringanthemer
+    xaringanthemer,
+    bookdown
