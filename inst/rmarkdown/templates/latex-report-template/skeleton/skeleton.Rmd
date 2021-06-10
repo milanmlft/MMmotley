@@ -6,11 +6,12 @@ date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
   bookdown::pdf_document2:
     toc: false
+    number_sections: true
     keep_tex: false
     latex_engine: xelatex
     includes:
       in_header: "preamble.tex"
-documentclass: report
+documentclass: article
 fontsize: 12pt
 editor_options:
   markdown:
@@ -25,7 +26,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## R Markdown
+# R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -35,7 +36,7 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
-## Including Plots
+# Including Plots
 
 You can also embed plots, for example:
 
